@@ -7,27 +7,40 @@
 
     <div id="all">
 
-        <header>
+      <header>
 
-          {{ partial "top.html" . }}
+        {{ partial "top.html" . }}
 
-          {{ partial "nav.html" . }}
+        {{ partial "nav.html" . }}
 
-        </header>
+      </header>
 
-        {{ partial "carousel.html" . }}
+      {{ partial "carousel.html" . }}
 
-        {{ partial "features.html" . }}
+      <!-- Biography part of the homepage. -->
+      <!-- See: https://github.com/gohugoio/hugo/issues/330#issuecomment-154045252 -->
+      {{ range .Data.Pages }}
+        {{ if (eq .Type "bio") }}
+          {{ .Content }}
+        {{ end }}
+      {{ end }}
 
-        {{ partial "testimonials.html" . }}
+      <!-- Edit file ./content/{_index.md, _index.html}. -->
+      <div class="container">
+        {{ .Content }}
+      </div>
 
-        {{ partial "see_more.html" . }}
+      {{ partial "features.html" . }}
 
-        {{ partial "recent_posts.html" . }}
+      {{ partial "testimonials.html" . }}
 
-        {{ partial "clients.html" . }}
+      {{ partial "see_more.html" . }}
 
-        {{ partial "footer.html" . }}
+      {{ partial "recent_posts.html" . }}
+
+      {{ partial "clients.html" . }}
+
+      {{ partial "footer.html" . }}
 
     </div>
     <!-- /#all -->
