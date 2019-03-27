@@ -28,6 +28,10 @@
             <h3>{{ $element.name }}</h3>
             {{ end }}
 
+            {{ if .subtitle }}
+            <h4 style="margin-top: -1em;">{{ $element.subtitle | markdownify }}</h4>
+            {{ end }}
+
             <ul class="fa-ul">
               {{ if .instructor }}
               <li><i class="fa fa-li fa-comment"></i> {{ $element.instructor }} </li>
