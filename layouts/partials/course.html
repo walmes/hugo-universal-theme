@@ -1,4 +1,5 @@
 <div class="container" id="course">
+  <!-- ATTENTION: md com `id = "course"` e diretório `./courses` -->
   {{ range $index, $element := sort .Site.Data.courses "weight" }}
 
   <div class="row">
@@ -30,19 +31,19 @@
 
             <ul class="fa-ul">
               {{ if .instructor }}
-              <li><i class="fa fa-li fa-user"></i> {{ $element.instructor }} </li>
+              <li><i class="fa fa-li fa-user"></i> {{ $element.instructor | markdownify }} </li>
               {{ end }}
 
               {{ if .instructors }}
-              <li><i class="fa fa-li fa-users"></i> {{ $element.instructors }} </li>
-              {{ end }}
-
-              {{ if .workload }}
-              <li><i class="fa fa-li fa-clock-o"></i> {{ $element.workload }}</li>
+              <li><i class="fa fa-li fa-users"></i> {{ $element.instructors | markdownify  }} </li>
               {{ end }}
 
               {{ if .semester }}
-              <li><i class="fa fa-li fa-graduation-cap"></i> {{ $element.semester }}</li>
+              <li><i class="fa fa-li fa-graduation-cap"></i> {{ $element.semester | markdownify }}</li>
+              {{ end }}
+
+              {{ if .workload }}
+              <li><i class="fa fa-li fa-clock-o"></i> {{ $element.workload | markdownify }}</li>
               {{ end }}
             </ul>
 
