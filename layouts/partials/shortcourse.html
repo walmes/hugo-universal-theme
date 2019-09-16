@@ -34,19 +34,19 @@
 
             <ul class="fa-ul">
               {{ if .instructor }}
-              <li><i class="fa fa-li fa-comment"></i> {{ $element.instructor }} </li>
+              <li><i class="fa fa-li fa-comment"></i> {{ $element.instructor | markdownify }} </li>
               {{ end }}
 
               {{ if .instructors }}
-              <li><i class="fa fa-li fa-comments"></i> {{ $element.instructors }} </li>
+              <li><i class="fa fa-li fa-comments"></i> {{ $element.instructors | markdownify }} </li>
               {{ end }}
 
               {{ if .audience }}
-              <li><i class="fa fa-li fa-users"></i> {{ $element.audience }} </li>
+              <li><i class="fa fa-li fa-users"></i> {{ $element.audience | markdownify }} </li>
               {{ end }}
 
               {{ if .institution }}
-              <li><i class="fa fa-li fa-university"></i> {{ $element.institution }} </li>
+              <li><i class="fa fa-li fa-university"></i> {{ $element.institution | markdownify }} </li>
               {{ end }}
 
               {{ if .workload }}
@@ -58,7 +58,7 @@
               {{ end }}
 
               {{ if .place }}
-              <li><i class="fa fa-li fa-map-marker"></i> {{ $element.place }}</li>
+              <li><i class="fa fa-li fa-map-marker"></i> {{ $element.place | markdownify }}</li>
               {{ end }}
 
               {{ if .homepage }}
