@@ -73,6 +73,10 @@
               <li><i class="fa fa-li fa-desktop"></i> {{ $element.slideurl | markdownify }}</li>
               {{ end }}
 
+              {{ if .playlist }}
+              <li><i class="fa fa-li fa-youtube-play"></i> {{ $element.playlist | markdownify }}</li>
+              {{ end }}
+
             </ul>
 
             <p class="intro">{{ $element.description | markdownify }}</p>
